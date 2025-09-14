@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayushmaan ❤️ Deepanshi - 2 Years of Magic</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <div class="bg-animation"></div>
+    <div class="particles" id="particles"></div>
+    
+    <!-- Music Control -->
+    <div class="music-control" id="musicControl">
+        <div class="music-waves" id="musicWaves">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        <span id="musicText">🎵 Click to Play</span>
+    </div>
+    
+    <!-- Audio Element (You'll add your track source here) -->
+    <audio id="backgroundMusic" loop>
+        <source src="audio.m4a" type="audio/mp3">
+        <!-- You'll replace this with your actual music file -->
+    </audio>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-hearts" id="floatingHearts"></div>
+        <div class="hero-content">
+            <h1>Ayushmaan ❤️ Deepanshi</h1>
+            <p class="hero-subtitle">Two Years of Pure Magic ✨</p>
+            <button class="love-story-btn" onclick="scrollToTimeline()">
+                Explore Our Love Story 💕
+            </button>
+        </div>
+    </section>
+
+    <!-- Timeline Counter Section -->
+    <section class="timeline-section reveal" id="timeline">
+        <div class="timeline-container">
+            <h2 class="timeline-title">Our Love Timeline ⏰</h2>
+            <div class="counter-grid">
+                <div class="counter-card">
+                    <span class="counter-number" id="years">2</span>
+                    <span class="counter-label">Beautiful Years</span>
+                </div>
+                <div class="counter-card">
+                    <span class="counter-number" id="months">0</span>
+                    <span class="counter-label">Months</span>
+                </div>
+                <div class="counter-card">
+                    <span class="counter-number" id="days">0</span>
+                    <span class="counter-label">Amazing Days</span>
+                </div>
+                <div class="counter-card">
+                    <span class="counter-number" id="hours">0</span>
+                    <span class="counter-label">Hours Together</span>
+                </div>
+                <div class="counter-card">
+                    <span class="counter-number" id="minutes">0</span>
+                    <span class="counter-label">Minutes of Love</span>
+                </div>
+                <div class="counter-card">
+                    <span class="counter-number" id="seconds">0</span>
+                    <span class="counter-label">Seconds of Joy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section reveal">
+        <div class="gallery-container">
+            <h2 class="gallery-title">Our Memory Gallery 📸</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gallery-image">💕</div>
+                    <div class="gallery-info">
+                        <h3>First Date Magic</h3>
+                        <p>September 9, 2023 - The day our hearts found their home in each other. Every nervousness, every smile, every moment was perfect.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-image">🌹</div>
+                    <div class="gallery-info">
+                        <h3>Our First "I Love You"</h3>
+                        <p>When three simple words changed our entire world and made everything feel complete and beautiful.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-image">🎂</div>
+                    <div class="gallery-info">
+                        <h3>Birthday Celebrations</h3>
+                        <p>Making each other's special days even more magical with love, surprises, and endless joy.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-image">💖</div>
+                    <div class="gallery-info">
+                        <h3>Valentine's Day</h3>
+                        <p>Every day with you feels like Valentine's Day, but this day is extra special for celebrating our love.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-image">🌟</div>
+                    <div class="gallery-info">
+                        <h3>Special Moments</h3>
+                        <p>All those little moments that make our relationship so beautiful and unique - our inside jokes, late-night talks, and shared dreams.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-image">✨</div>
+                    <div class="gallery-info">
+                        <h3>Future Dreams</h3>
+                        <p>Looking forward to a lifetime of adventures, love, and creating more beautiful memories together.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz -->
+    <section class="quiz-section reveal">
+        <div class="quiz-container">
+            <h2 class="quiz-title">How Well Do You Know Our Love? 💝</h2>
+            <div class="quiz-progress">
+                <div class="quiz-progress-fill" id="progressFill"></div>
+            </div>
+            <div class="quiz-card">
+                <div class="question active" data-question="0">
+                    <h3>When did our beautiful love story begin? 🌟</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" onclick="selectAnswer(0, true)">September 9, 2023 💕</button>
+                        <button class="option-btn" onclick="selectAnswer(0, false)">September 10, 2023</button>
+                        <button class="option-btn" onclick="selectAnswer(0, false)">August 9, 2023</button>
+                        <button class="option-btn" onclick="selectAnswer(0, false)">October 9, 2023</button>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="1">
+                    <h3>How many wonderful years have we been together? ❤️</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" onclick="selectAnswer(1, false)">1 Amazing Year</button>
+                        <button class="option-btn" onclick="selectAnswer(1, true)">2 Beautiful Years 💖</button>
+                        <button class="option-btn" onclick="selectAnswer(1, false)">3 Perfect Years</button>
+                        <button class="option-btn" onclick="selectAnswer(1, false)">1.5 Lovely Years</button>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="2">
+                    <h3>What makes our relationship so special? ✨</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" onclick="selectAnswer(2, true)">Our deep, unconditional love 💕</button>
+                        <button class="option-btn" onclick="selectAnswer(2, false)">We have similar hobbies</button>
+                        <button class="option-btn" onclick="selectAnswer(2, false)">We live nearby</button>
+                        <button class="option-btn" onclick="selectAnswer(2, false)">We went to the same school</button>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="3">
+                    <h3>What's Ayushmaan's favorite thing about Deepanshi? 🌹</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" onclick="selectAnswer(3, false)">Her cooking skills</button>
+                        <button class="option-btn" onclick="selectAnswer(3, true)">Everything about her! 💖</button>
+                        <button class="option-btn" onclick="selectAnswer(3, false)">Her sense of humor</button>
+                        <button class="option-btn" onclick="selectAnswer(3, false)">Her style</button>
+                    </div>
+                </div>
+                
+                <div id="quizResult" style="display: none;">
+                    <h3>Quiz Complete! 🎉</h3>
+                    <div id="scoreDisplay" class="counter-number" style="margin: 20px 0;"></div>
+                    <p id="scoreMessage" style="font-size: 1.2rem; margin-bottom: 20px;"></p>
+                    <button class="love-story-btn" onclick="resetQuiz()">Take Quiz Again 💕</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Message Section -->
+    <section class="message-section reveal">
+        <div class="message-container">
+            <div class="message-card">
+                <h2 class="message-title">A Love Letter for Deepanshi 💌</h2>
+                
+                <p class="message-text">
+                    <strong>My Dearest Deepanshi,</strong>
+                </p>
+                
+                <p class="message-text">
+                    Two years ago, on September 9th, 2023, something magical happened. You walked into my life and everything changed. The world became brighter, colors became more vivid, and my heart found its missing piece.
+                </p>
+                
+                <p class="message-text">
+                    Every single day with you has been a gift. Your smile lights up my darkest days, your laughter is the most beautiful melody I've ever heard, and your love is the greatest treasure I could ever hope to possess.
+                </p>
+                
+                <p class="message-text">
+                    You've made me a better person, shown me what true love really means, and given me a future worth dreaming about. In your eyes, I see my home. In your heart, I've found my peace.
+                </p>
+                
+                <p class="message-text">
+                    Thank you for two incredible years of love, laughter, adventures, and beautiful memories. Thank you for being patient with me, for supporting my dreams, and for loving me exactly as I am.
+                </p>
+                
+                <p class="message-text">
+                    As we celebrate this special milestone, I want you to know that my love for you grows stronger with each passing second. You are my yesterday, my today, and all of my tomorrows.
+                </p>
+                
+                <p class="message-text">
+                    Here's to many more years of adventures together, growing old together, and loving each other more deeply with each sunrise. You are my forever, Deepanshi.
+                </p>
+                
+                <p class="message-text">
+                    <strong>Happy 2nd Anniversary, my beautiful queen! 👑💖</strong>
+                </p>
+                
+                <div class="signature">
+                    Forever and always yours,<br>
+                    Ayushmaan ❤️
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Elements Floating -->
+    <div id="clickHearts"></div>
+
+    <script>
+     
+    </script>
+    <script src="script.js"></script>
+    <script>
+        // const audio = document.getElementById('backgroundMusic');
+        // audio.volume = 1.0;
+    </script>
+</body>
+</html>
